@@ -1,8 +1,16 @@
 import random
 
+def family_relationship():
+	return random.choice(("brother", "sister", "son", "daughter", "child", "parent"))
+
+def finding_people():
+	target = random.choice((family_relationship, "friend"))
+
+	return target() if callable(target) else target
+
 def finding():
 	def objective():
-		return random.choice((
+		objective = random.choice((
 			"their family",
 			"safety",
 			"clean water",
@@ -13,7 +21,12 @@ def finding():
 			"supplies",
 			"gasoline",
 			"a library",
+			"antibiotics",
+			"insulin",
+			finding_people,
 		))
+
+		return objective() if callable(objective) else objective
 
 	return f"find {objective()}"
 
@@ -30,6 +43,7 @@ def ambition():
 		"start a band",
 		"meet someone new",
 		"fall in love again",
+		finding,
 	)
 
 	desire = random.choice(('hope', 'want', 'would like', 'need'))
@@ -43,5 +57,5 @@ def ambition():
 
 	ambition = potential_ambition() if callable(potential_ambition) else potential_ambition
 
-	return f"{modifier}{desire} to {ambition}"
+	return f"They {modifier}{desire} to {ambition}"
 

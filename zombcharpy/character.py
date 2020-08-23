@@ -10,7 +10,10 @@ def former_job():
 		"junkie",
 		"mechanic",
 		"hairdresser",
-		"barrista",]
+		"barrista",
+		"shop assistant",
+		"teacher",
+		"trucker",]
 
 	return random.choice(jobs)
 
@@ -18,4 +21,4 @@ def former_job():
 def create_character():
 	return f"""You meet someone.
 Before everything happened they used to be a {former_job()}; now they're a {current_job()}.
-They {ambition()}."""
+{ambition()}."""
