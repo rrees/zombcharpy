@@ -1,6 +1,7 @@
 import random
 
 from .ambitions import ambition
+from .jobs.jobs import current_job
 
 def former_job():
 	jobs =["farmer",
@@ -13,13 +14,8 @@ def former_job():
 
 	return random.choice(jobs)
 
-def current_job():
-	jobs = ["drifter", "smuggler", "courier", "guard", "medic", "guide", "loner", "tracker", "bounty hunter", "fisherman", "trader"]
-
-	return random.choice(jobs)
-
 
 def create_character():
 	return f"""You meet someone.
 Before everything happened they used to be a {former_job()}; now they're a {current_job()}.
-They want to {ambition()}."""
+They {ambition()}."""
